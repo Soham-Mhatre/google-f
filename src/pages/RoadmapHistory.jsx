@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Loader, Calendar, Clock } from 'lucide-react';
 import dotenv from 'dotenv';
 
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 export default function RoadmapHistory() {
   const [roadmapHistory, setRoadmapHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  const apiUrl = 'https://google-b-1-y2sb.onrender.com';
   useEffect(() => {
     const fetchRoadmapHistory = async () => {
       try {
