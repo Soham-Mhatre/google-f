@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, Loader } from 'lucide-react'
 import RoadmapBlock from '../components/RoadmapBlock'
-const apiUrl = process.env.REACT_APP_API_URL;
+import dotenv from 'dotenv';
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 const Roadmap = () => {
   const [topic, setTopic] = useState('')

@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { BookOpen, MessageCircle, CheckSquare } from 'lucide-react'
-const apiUrl = process.env.REACT_APP_API_URL;
+
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 const Home = () => {
   return (

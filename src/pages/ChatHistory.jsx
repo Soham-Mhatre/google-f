@@ -1,9 +1,11 @@
 'use client'
 
+import dotenv from 'dotenv';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Loader, MessageSquare, User, Bot } from 'lucide-react';
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 export default function ChatHistory() {
   const [chatHistory, setChatHistory] = useState([]);
@@ -13,7 +15,7 @@ export default function ChatHistory() {
   useEffect(() => {
     const fetchChatHistory = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/chatbot/history', {
+        const response = await fetch(`${apiUrl}/api/chatbot/history`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }

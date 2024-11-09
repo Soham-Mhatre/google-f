@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle, Send, X, ChevronDown } from 'lucide-react'
-
 const ChatbotFloater = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [input, setInput] = useState('')
@@ -17,7 +16,7 @@ const ChatbotFloater = () => {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
   const handleSend = async () => {
     if (!input.trim()) return

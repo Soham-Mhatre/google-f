@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import dotenv from 'dotenv'
 import { BookOpen, MessageCircle, CheckSquare, Home as HomeIcon, Menu, LogIn, LogOut } from 'lucide-react'
 
 // Importing components and pages
