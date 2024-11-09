@@ -10,11 +10,12 @@ export default function RoadmapHistory() {
   const [roadmapHistory, setRoadmapHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
+  const apiUrl = 'https://google-b-1-y2sb.onrender.com';
   useEffect(() => {
     const fetchRoadmapHistory = async () => {
       try {
-        const response = await fetch(`${apiurl}/api/roadmap/history`, {
+        const response = await fetch(`${apiUrl}/api/roadmap/history`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
