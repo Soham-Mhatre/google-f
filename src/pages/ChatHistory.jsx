@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Loader, MessageSquare, User, Bot } from 'lucide-react';
+import MarkdownRenderer from '../components/MarkdownRenderer';
+import '../components/ChatbotStyles.css';
 const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 export default function ChatHistory() {
@@ -49,7 +51,7 @@ export default function ChatHistory() {
       <h1 className="text-3xl font-bold mb-8 text-center text-gray-800 dark:text-white">Chat History</h1>
 
       <div className="flex-grow overflow-auto">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <AnimatePresence>
             {error && (
               <motion.div 
@@ -76,7 +78,7 @@ export default function ChatHistory() {
               No chat history available.
             </motion.p>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-8">
               <AnimatePresence>
                 {chatHistory.map((chat, index) => (
                   <motion.div
@@ -85,20 +87,43 @@ export default function ChatHistory() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+                    className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700"
                   >
-                    <div className="flex items-center mb-2">
-                      <User className="w-5 h-5 mr-2 text-blue-500" />
-                      <p className="font-bold text-gray-800 dark:text-white">User:</p>
+                    {/* User Message */}
+                    <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 border-b border-gray-200 dark:border-gray-700">
+                      <div className="flex items-start space-x-3">
+                        <div className="flex-shrink-0">
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-r from-green-500 to-teal-600">
+                            <User className="w-5 h-5 text-white" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl p-4">
+                            <p className="leading-relaxed">{chat.userMessage}</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="mb-4 text-gray-700 dark:text-gray-300">{chat.userMessage}</p>
-                    <div className="flex items-center mb-2">
-                      <Bot className="w-5 h-5 mr-2 text-green-500" />
-                      <p className="font-bold text-gray-800 dark:text-white">Bot:</p>
+
+                    {/* Bot Response */}
+                    <div className="p-6">
+                      <div className="flex items-start space-x-3">
+                        <div className="flex-shrink-0">
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
+                            <Bot className="w-5 h-5 text-white" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-4 chatbot-message">
+                            <MarkdownRenderer content={chat.botResponse} />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="mb-4 text-gray-700 dark:text-gray-300">{chat.botResponse}</p>
-                    <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                      <MessageSquare className="w-4 h-4 mr-1" />
+
+                    {/* Timestamp */}
+                    <div className="px-6 pb-4 flex items-center justify-end text-sm text-gray-500 dark:text-gray-400">
+                      <MessageSquare className="w-4 h-4 mr-2" />
                       <span>{new Date(chat.createdAt).toLocaleString()}</span>
                     </div>
                   </motion.div>

@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://google-b-1-y2sb.onrender.com',
         changeOrigin: true,
         secure: false,
       },
