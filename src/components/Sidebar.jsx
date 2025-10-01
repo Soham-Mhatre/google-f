@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Home, MessageCircle, BookOpen, CheckSquare, X } from 'lucide-react'
+import { Home, MessageCircle, BookOpen, CheckSquare, X, Briefcase } from 'lucide-react'
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
   const sidebarVariants = {
@@ -67,6 +67,16 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           <Link to="/checklist" className="flex items-center py-2 px-4 rounded hover:bg-gray-700 transition duration-300">
             <CheckSquare className="w-5 h-5 mr-3" />
             Checklist
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={linkVariants}
+          whileHover="hover"
+          whileTap="tap"
+        >
+          <Link to="/placement-prep" className="flex items-center py-2 px-4 rounded hover:bg-gray-700 transition duration-300">
+            <Briefcase className="w-5 h-5 mr-3" />
+            Placement Prep
           </Link>
         </motion.div>
       </nav>

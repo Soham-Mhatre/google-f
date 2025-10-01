@@ -30,6 +30,9 @@ export default function Navbar({ setIsSidebarOpen, isLoggedIn, setIsLoggedIn }) 
             <Link to="/checklist" className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
               Checklist
             </Link>
+            <Link to="/placement-prep" className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+              Placement Prep
+            </Link>
             {isLoggedIn ? (
               <button
                 onClick={() => {

@@ -16,6 +16,7 @@ import ChatHistory from './pages/ChatHistory'
 import RoadmapHistory from './pages/RoadmapHistory'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import PlacementPrep from './pages/PlacementPrep'
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -67,6 +68,16 @@ export default function App() {
                   transition={{ duration: 0.3 }}
                 >
                   <Checklist />
+                </motion.div>
+              } />
+              <Route path="/placement-prep" element={
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <PlacementPrep />
                 </motion.div>
               } />
               <Route path="/chat-history" element={<ChatHistory />} />
