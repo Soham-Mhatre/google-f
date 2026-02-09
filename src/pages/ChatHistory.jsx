@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Loader, MessageSquare, User, Bot } from 'lucide-react';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import '../components/ChatbotStyles.css';
-const apiUrl = 'https://google-b-1-y2sb.onrender.com';
+const apiUrl = 'http://localhost:5000';
 
 export default function ChatHistory() {
   const [chatHistory, setChatHistory] = useState([]);

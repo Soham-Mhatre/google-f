@@ -7,7 +7,7 @@ import { ArrowLeft, Loader, Calendar, Clock } from 'lucide-react';
 import { isAuthenticated, getAuthHeaders } from '../utils/auth';
 import dotenv from 'dotenv';
 
-const apiUrl = 'https://google-b-1-y2sb.onrender.com';
+const apiUrl = 'http://localhost:5000';
 export default function RoadmapHistory() {
   const [roadmapHistory, setRoadmapHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

@@ -21,6 +21,9 @@ export default function Navbar({ setIsSidebarOpen, isLoggedIn, setIsLoggedIn }) 
             </Link>
           </div>
           <div className="flex items-center space-x-4">
+            <Link to="/courses" className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-semibold">
+              Courses
+            </Link>
             <Link to="/roadmap" className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
               Roadmap
             </Link>

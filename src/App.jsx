@@ -17,6 +17,13 @@ import RoadmapHistory from './pages/RoadmapHistory'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import PlacementPrep from './pages/PlacementPrep'
+import Recommendations from './pages/Recommendations'
+import FederatedDashboard from './pages/FederatedDashboard'
+import Courses from './pages/Courses'
+import CourseDetail from './pages/CourseDetail'
+
+// Federated Learning Context
+import { FederatedLearningProvider } from './contexts/FederatedLearningContext'
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -24,12 +31,13 @@ export default function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-900 text-gray-900 dark:text-gray-100">
-        <Navbar setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-        <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-        <main className="pt-16 px-4 md:px-8 lg:px-16 transition-all duration-300 ease-in-out">
-          <AnimatePresence mode="wait">
-            <Routes>
+      <FederatedLearningProvider>
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-900 text-gray-900 dark:text-gray-100">
+          <Navbar setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+          <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+          <main className="pt-16 px-4 md:px-8 lg:px-16 transition-all duration-300 ease-in-out">
+            <AnimatePresence mode="wait">
+              <Routes>
               <Route path="/" element={
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -82,6 +90,28 @@ export default function App() {
               } />
               <Route path="/chat-history" element={<ChatHistory />} />
               <Route path="/roadmap-history" element={<RoadmapHistory />} />
+              <Route path="/recommendations" element={<Recommendations />} />
+              <Route path="/federated-dashboard" element={<FederatedDashboard />} />
+              <Route path="/courses" element={
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Courses />
+                </motion.div>
+              } />
+              <Route path="/courses/:courseId" element={
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <CourseDetail />
+                </motion.div>
+              } />
               <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
@@ -89,6 +119,7 @@ export default function App() {
         </main>
         <ChatbotFloater />
       </div>
+      </FederatedLearningProvider>
     </Router>
   )
 }

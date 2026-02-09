@@ -5,7 +5,7 @@ import { ArrowLeft, Loader, Send, Bot, User } from 'lucide-react';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import '../components/ChatbotStyles.css';
 import dotenv from 'dotenv';
-const apiUrl = 'https://google-b-1-y2sb.onrender.com';
+const apiUrl = 'http://localhost:5000';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);

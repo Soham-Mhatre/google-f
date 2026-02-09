@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { isAuthenticated, getAuthHeaders } from '../utils/auth';
 import dotenv from 'dotenv';
-const apiUrl = 'https://google-b-1-y2sb.onrender.com';
+const apiUrl = 'http://localhost:5000';
 
 export default function Checklist() {
   const [checklistItems, setChecklistItems] = useState([]);

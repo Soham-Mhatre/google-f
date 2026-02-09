@@ -16,7 +16,7 @@ const ChatbotFloater = () => {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
-  const apiUrl = 'https://google-b-1-y2sb.onrender.com';
+  const apiUrl = 'http://localhost:5000';
 
   const handleSend = async () => {
     if (!input.trim()) return
