@@ -5,7 +5,7 @@ import { BookOpen, MessageCircle, CheckSquare, GraduationCap } from 'lucide-reac
 import RecommendedCourses from '../components/RecommendedCourses'
 import YouTubeRecommendations from '../components/YouTubeRecommendations'
 
-const apiUrl = 'http://localhost:5000';
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 const Home = () => {
   return (

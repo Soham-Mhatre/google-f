@@ -27,7 +27,7 @@ const RecommendedCourses = () => {
       }
 
       // Show personalized recommendations for logged-in users
-      const response = await fetch('http://localhost:5000/api/courses/recommended/me', {
+      const response = await fetch('https://google-b-1-y2sb.onrender.com/api/courses/recommended/me', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

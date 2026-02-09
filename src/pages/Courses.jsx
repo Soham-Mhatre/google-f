@@ -25,7 +25,7 @@ const Courses = () => {
       if (selectedDifficulty) params.append('difficulty', selectedDifficulty);
       if (searchQuery) params.append('search', searchQuery);
 
-      const response = await fetch(`http://localhost:5000/api/courses?${params}`);
+      const response = await fetch(`https://google-b-1-y2sb.onrender.com/api/courses?${params}`);
       const data = await response.json();
       setCourses(data.courses || []);
     } catch (error) {
@@ -37,7 +37,7 @@ const Courses = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/courses/categories');
+      const response = await fetch('https://google-b-1-y2sb.onrender.com/api/courses/categories');
       const data = await response.json();
       setCategories(data.categories || []);
     } catch (error) {

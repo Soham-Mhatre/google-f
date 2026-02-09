@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Loader, Mail, Lock, AlertCircle } from 'lucide-react';
 import dotenv from 'dotenv';
-const apiUrl = 'http://localhost:5000';
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 export default function Login({ setIsLoggedIn }) {
   const [email, setEmail] = useState('');

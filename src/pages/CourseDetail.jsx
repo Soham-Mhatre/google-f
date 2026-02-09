@@ -23,7 +23,7 @@ const CourseDetail = () => {
   const fetchCourseDetails = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/api/courses/${courseId}`);
+      const response = await fetch(`https://google-b-1-y2sb.onrender.com/api/courses/${courseId}`);
       const data = await response.json();
       setCourse(data.course);
       setRelatedCourses(data.relatedCourses || []);
@@ -42,7 +42,7 @@ const CourseDetail = () => {
       // Record interaction in backend
       const token = localStorage.getItem('token');
       if (token) {
-        await fetch('http://localhost:5000/api/courses/interaction', {
+        await fetch('https://google-b-1-y2sb.onrender.com/api/courses/interaction', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const CourseDetail = () => {
       });
 
       // Record in backend
-      await fetch('http://localhost:5000/api/courses/interaction', {
+      await fetch('https://google-b-1-y2sb.onrender.com/api/courses/interaction', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
