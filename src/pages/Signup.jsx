@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import dotenv from 'dotenv';
-const apiUrl = 'http://localhost:5000';
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 const Signup = () => {
   const [email, setEmail] = useState('');

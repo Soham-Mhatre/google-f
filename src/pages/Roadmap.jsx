@@ -5,7 +5,7 @@ import { ArrowLeft, Loader, BookOpen, Plus } from 'lucide-react'
 import MarkdownRenderer from '../components/MarkdownRenderer'
 import '../components/ChatbotStyles.css'
 import dotenv from 'dotenv';
-const apiUrl = 'http://localhost:5000';
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 const Roadmap = () => {
   const [topic, setTopic] = useState('')

@@ -7,7 +7,7 @@ export const getPersonalizedVideoTopics = async () => {
     }
 
     // Fetch user's recent interactions to determine interests
-    const response = await fetch('http://localhost:5000/api/federated/interactions/me?limit=100', {
+    const response = await fetch('https://google-b-1-y2sb.onrender.com/api/federated/interactions/me?limit=100', {
       headers: {
         'Authorization': `Bearer ${token}`
       }

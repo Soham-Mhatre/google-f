@@ -2,7 +2,7 @@ import * as tf from '@tensorflow/tfjs';
 import localforage from 'localforage';
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://google-b-1-y2sb.onrender.com/api';
 
 class FederatedLearningClient {
   constructor() {

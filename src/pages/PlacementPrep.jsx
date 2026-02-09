@@ -19,7 +19,7 @@ import MarkdownRenderer from '../components/MarkdownRenderer';
 import '../components/ChatbotStyles.css';
 import { isAuthenticated, getAuthHeaders } from '../utils/auth';
 
-const apiUrl = 'http://localhost:5000';
+const apiUrl = 'https://google-b-1-y2sb.onrender.com';
 
 const PlacementPrep = () => {
   const [companyName, setCompanyName] = useState('');
